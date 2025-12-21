@@ -33,11 +33,7 @@ const AllUsers = () => {
     {/* head */}
     <thead>
       <tr>
-        <th>
-          <label>
-            <input type="checkbox" className="checkbox" />
-          </label>
-        </th>
+        
         <th>Name</th>
         <th>Role</th>
         <th>User Status</th>
@@ -48,11 +44,7 @@ const AllUsers = () => {
       {
         users?.map(user=>
             <tr>
-        <th>
-          <label>
-            <input type="checkbox" className="checkbox" />
-          </label>
-        </th>
+        
         <td>
           <div className="flex items-center gap-3">
             <div className="avatar">

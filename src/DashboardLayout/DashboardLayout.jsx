@@ -6,7 +6,7 @@ const DashboardLayout = () => {
     return (
     <div>
   <Aside />
-  <div className="ml-64">
+  <div className="md:ml-60">
     <Outlet />
   </div>
 </div>
