@@ -1,41 +1,46 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Footer = () => {
   return (
     <div>
-      <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
-  <aside className='w-50'>
-    <h1 className='text-4xl text-primary font-bold'>PetMart</h1>
-    <p>
-      PetMart
-      <br />
-      PetMart connects local pet owners and buyers for adoption and pet care products.
-    </p>
-  </aside>
-  <nav>
-    <h6 className="footer-title">Services</h6>
-    <a className="link link-hover">Adoption</a>
-    <a className="link link-hover">Pet Care</a>
-    <a className="link link-hover">Pet Accessories</a>
-    <a className="link link-hover">Pet Food</a>
-  </nav>
-  <nav>
-    <h6 className="footer-title">Company</h6>
-    <a className="link link-hover">Home</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">About Us</a>
-  </nav>
-  <nav>
-    <h6 className="footer-title">Legal</h6>
-    <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-  </nav>
-</footer>
-<footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
-  <aside>
-    <p>Copyright © {new Date().getFullYear()} - All right reserved by Sady</p>
-  </aside>
-</footer>
+      <footer className="bg-red-700 text-red-00">
+        <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="text-xl font-bold text-white mb-3">
+              Blood Donation
+            </h3>
+            <p className="text-sm text-white">
+              A platform to connect blood donors with people in need and save
+              lives together.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-3">
+              Useful Links
+            </h4>
+            <ul className="space-y-2 text-white">
+              <li><Link to="/" className="hover:text-white">Home</Link></li>
+              <li><Link to="/search" className="hover:text-green">Search Donors</Link></li>
+              <li><Link to="/register" className="hover:text-grey">Become a Donor</Link></li>
+              <li><Link to="/dashboard" className="hover:text-grey">Dashboard</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-3">
+              Support
+            </h4>
+            <p className=" text-white"> +880 1234-567890</p>
+            <p className=" text-white"> support@blooddonation.org</p>
+          </div>
+        </div>
+
+        <div className="text-center py-4 border-t border-red-900 text-sm">
+          © 2025 Blood Donation . All rights reserved Sady.
+        </div>
+      </footer>
     </div>
   );
 };

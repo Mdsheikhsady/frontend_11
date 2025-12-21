@@ -8,6 +8,8 @@ const SearchRequest = () => {
 
   const [upazila, setUpazila] = useState("");
   const [district, setDistrict] = useState("");
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const axiosInstance = useAxios();
 
@@ -34,7 +36,7 @@ const SearchRequest = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen ">
       <form onSubmit={handleSearch} className="flex fieldset">
         <select
           name="blood"
@@ -85,6 +87,46 @@ const SearchRequest = () => {
 
         <button className="btn">Search</button>
       </form>
+      {loading && (
+        <p className="text-center text-lg font-semibold">Searching...</p>
+      )}
+
+      {!loading && results.length === 0 && (
+        <p className="text-center text-gray-500">
+          No matching donor requests found.
+        </p>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {results.map((item) => (
+          <div
+            key={item._id}
+            className="card bg-white shadow-lg border border-red-100"
+          >
+            <div className="card-body">
+              <h2 className="card-title text-red-600">
+                Blood Group: {item.bloodGroup}
+              </h2>
+
+              <p>
+                <strong>District:</strong> {item.district}
+              </p>
+              <p>
+                <strong>Upazila:</strong> {item.upazila}
+              </p>
+              <p>
+                <strong>Date:</strong> {item.date}
+              </p>
+
+              <div className="card-actions justify-end mt-4">
+                <button className="btn btn-outline btn-error">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
