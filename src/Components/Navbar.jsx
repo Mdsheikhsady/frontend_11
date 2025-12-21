@@ -53,14 +53,7 @@ const Navbar = () => {
               <NavLink to={"/donate"}>Donate</NavLink>
             </li>
             
-            {user && (
-              <>
-                <li>
-                  <NavLink to={"/profile"}>My Profile</NavLink>
-                </li>
-            
-              </>
-            )}
+           
           </ul>
         </div>
         <Link to={"/"} className="btn btn-ghost text-xl">
@@ -70,7 +63,10 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
          <li>
-              <NavLink >All request</NavLink>
+              <NavLink to={'/'}>Home</NavLink>
+            </li>
+            <li>
+              <NavLink to={'/all-request'}>All request</NavLink>
             </li>
             <li>
               <NavLink to={"/search"} >Search</NavLink>
@@ -79,14 +75,14 @@ const Navbar = () => {
               <NavLink to={"/donate"}>Donate</NavLink>
             </li>
           
-          {user && (
+          {/* {user && (
             <>
               <li>
                 <NavLink to={"/profile"}>My Profile</NavLink>
               </li>
                   
             </>
-          )}
+          )} */}
         </ul>
       </div>
 

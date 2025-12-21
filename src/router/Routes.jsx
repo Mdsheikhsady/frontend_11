@@ -18,6 +18,7 @@ import SearchRequest from "../pages/SearchRequest/SearchRequest";
 import MyProfile from "../pages/Dashboard/MyProfile/MyProfile";
 import DonorDashboard from "../pages/Dashboard/DonorDashboard/DonorDashboard";
 import AdminDashboard from "../pages/AdminDashboard/AdminDashboard";
+import AllRequest from "../pages/AllRequest/AllRequest";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>
+        },
+        {
+            path: '/all-request',
+            element: <AllRequest></AllRequest>
         },
 
         {
