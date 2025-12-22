@@ -93,14 +93,20 @@ const Navbar = () => {
         <div className="navbar-end flex items-center gap-3">
           {/* <Link to={'/dashboard'} className="btn btn-sm">Dashboard</Link> */}
           {role == "admin" && (
-          <Link to="/dashboard/all-users" >
-            <button className="btn btn-sm">Dashboard</button>
+          <Link to="/dashboard/admin-dashboard" >
+            <button className="btn btn-sm"> Admin Dashboard</button>
           </Link>
         )}
 
           {role == "donor" && (
           <Link to="/dashboard/donor-dashboard" >
-            <button className="btn btn-sm">Dashboard</button>
+            <button className="btn btn-sm">Donor Dashboard</button>
+          </Link>
+        )}
+
+        {role == "volunteer" && (
+          <Link to="/dashboard/volunteer-dashboard" >
+            <button className="btn btn-sm">Volunteer Dashboard</button>
           </Link>
         )}
         

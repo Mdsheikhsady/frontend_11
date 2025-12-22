@@ -20,6 +20,7 @@ import DonorDashboard from "../pages/Dashboard/DonorDashboard/DonorDashboard";
 import AdminDashboard from "../pages/AdminDashboard/AdminDashboard";
 import AllRequest from "../pages/AllRequest/AllRequest";
 import AddVolunteer from "../pages/AddVolunteer";
+import VolunteerDashboard from "../pages/Dashboard/VolunteerDashboard";
 
 const router = createBrowserRouter([
   {
@@ -103,6 +104,10 @@ const router = createBrowserRouter([
         {
             path:'add-volunteer',
             element:<AddVolunteer></AddVolunteer>
+        },
+        {
+            path:'volunteer-dashboard',
+            element:<VolunteerDashboard></VolunteerDashboard>
         },
         {
             path:'my-profile',
