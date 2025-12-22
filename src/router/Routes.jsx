@@ -19,6 +19,7 @@ import MyProfile from "../pages/Dashboard/MyProfile/MyProfile";
 import DonorDashboard from "../pages/Dashboard/DonorDashboard/DonorDashboard";
 import AdminDashboard from "../pages/AdminDashboard/AdminDashboard";
 import AllRequest from "../pages/AllRequest/AllRequest";
+import AddVolunteer from "../pages/AddVolunteer";
 
 const router = createBrowserRouter([
   {
@@ -98,6 +99,10 @@ const router = createBrowserRouter([
         {
             path:'my-request',
             element: <MyRequest></MyRequest>
+        },
+        {
+            path:'add-volunteer',
+            element:<AddVolunteer></AddVolunteer>
         },
         {
             path:'my-profile',

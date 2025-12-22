@@ -8,7 +8,8 @@ import {
   FaCog,
   FaSignOutAlt,
   FaHome,
-} from "react-icons/fa";
+} 
+from "react-icons/fa";
 import { NavLink } from "react-router";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { signOut } from "firebase/auth";
@@ -96,6 +97,15 @@ const Aside = () => {
             className={menuItemClass}
           >
             All Users
+          </NavLink>
+        )}
+        {role == "admin" && (
+          <NavLink
+            onClick={() => setOpen(false)}
+            to="/dashboard/add-volunteer"
+            className={menuItemClass}
+          >
+            Add Volunteer
           </NavLink>
         )}
 
