@@ -101,7 +101,7 @@ const SearchRequest = () => {
       )}
 
       {!loading && results.length === 0 && (
-        <p className="text-center text-gray-500">
+        <p className="text-center text-3xl p-20 text-gray-500">
           No matching donor requests found.
         </p>
       )}

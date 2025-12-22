@@ -15,7 +15,7 @@ const AllRequest = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold mb-6">All Blood Requests</h2>
+      <h2 className="text-red-600 text-4xl font-bold mb-6 text-center">All Blood Requests</h2>
 
       {requests.length === 0 ? (
         <p className="text-gray-500">No requests found</p>
