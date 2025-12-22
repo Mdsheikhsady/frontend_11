@@ -35,6 +35,8 @@ const SearchRequest = () => {
       });
   };
 
+  
+
   return (
     <div className="min-h-screen ">
       <form onSubmit={handleSearch} className="flex fieldset">
@@ -87,6 +89,8 @@ const SearchRequest = () => {
 
         <button className="btn">Search</button>
       </form>
+
+
       {loading && (
         <p className="text-center text-lg font-semibold">Searching...</p>
       )}

@@ -24,9 +24,8 @@ const AllRequest = () => {
           {requests.map((req) => (
             <div
               key={req._id}
-              className="bg-white rounded-xl shadow-md p-5 border hover:shadow-lg transition"
+              className="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition"
             >
-              {/* Blood Group */}
               <div className="flex justify-between items-center mb-3">
                 <span className="text-lg font-bold text-red-600">
                   {req.bloodGroup}
