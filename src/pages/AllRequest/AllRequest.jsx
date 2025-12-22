@@ -59,13 +59,20 @@ const AllRequest = () => {
                 Address: {req.fullAddress}
               </p>
 
-              {/* Footer */}
+              
               <div className=" text-sm text-gray-500">
                 <span>Requested by:</span><span> </span> 
                 <span className="font-medium">{req.requesterName}</span>
               </div>
+              <div className="card-actions">
+                <button className="btn btn-outline btn-error">
+                  View Details
+                </button>
+              </div>
             </div>
+            
           ))}
+          
         </div>
       )}
     </div>

@@ -31,8 +31,13 @@ const SearchRequest = () => {
         `/search-request?bloodGroupSrc=${encodeURIComponent(bloodGroupSrc)}&district=${district}&upazila=${upazila}`
       )
       .then((res) => {
-        console.log(res.data);
-      });
+        setResults(res.data);
+        setLoading(false)
+      })
+      .catch((err)=>{
+        console.log(err);
+        setLoading(false)
+      })
   };
 
   
@@ -113,13 +118,13 @@ const SearchRequest = () => {
               </h2>
 
               <p>
-                <strong>District:</strong> {item.district}
+                <strong>District:</strong> {item.recipientDistrict}
               </p>
               <p>
-                <strong>Upazila:</strong> {item.upazila}
+                <strong>Upazila:</strong> {item.recipientUpazila}
               </p>
               <p>
-                <strong>Date:</strong> {item.date}
+                <strong>Date:</strong> {item.createdAt}
               </p>
 
               <div className="card-actions justify-end mt-4">

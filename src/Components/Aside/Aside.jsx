@@ -55,7 +55,7 @@ const Aside = () => {
           {role == "admin" && (
             <NavLink
               onClick={() => setOpen(false)}
-              to="/dashboard/all-users"
+              to="/dashboard/admin-dashboard"
               className={menuItemClass}
             >
               Admin Panel
