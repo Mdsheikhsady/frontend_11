@@ -33,7 +33,7 @@ const Footer = () => {
               Support
             </h4>
             <p className=" text-white"> +880 4242424242</p>
-            <p className=" text-white"> sady@blooddonation.org</p>
+            <p className=" text-white"> sad@donationblood.org</p>
           </div>
         </div>
 
