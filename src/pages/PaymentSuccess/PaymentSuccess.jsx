@@ -18,9 +18,12 @@ const PaymentSuccess = () => {
 
     return (
         <div>
-           Payment Success 
+           Payment Successful 
         </div>
     );
 };
 
 export default PaymentSuccess;
+
+
+
