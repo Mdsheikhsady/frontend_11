@@ -32,8 +32,8 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white mb-3">
               Support
             </h4>
-            <p className=" text-white"> +880 1234-567890</p>
-            <p className=" text-white"> support@blooddonation.org</p>
+            <p className=" text-white"> +880 4242424242</p>
+            <p className=" text-white"> sady@blooddonation.org</p>
           </div>
         </div>
 
