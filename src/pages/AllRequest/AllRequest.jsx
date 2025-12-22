@@ -64,7 +64,7 @@ const AllRequest = () => {
                 <span>Requested by:</span><span> </span> 
                 <span className="font-medium">{req.requesterName}</span>
               </div>
-              <div className="card-actions">
+              <div className="card-actions mt-4">
                 <button className="btn btn-outline btn-error">
                   View Details
                 </button>
