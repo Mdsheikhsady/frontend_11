@@ -72,6 +72,7 @@ const AddVolunteer = () => {
       blood,
       district,
       upazila,
+      role: 'volunteer'
     };
 
     
