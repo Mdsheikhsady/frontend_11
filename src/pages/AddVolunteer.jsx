@@ -1,34 +1,30 @@
-import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react';
-import auth from '../firebase/firebase.config';
-import { updateProfile } from 'firebase/auth';
-import { toast } from 'react-toastify';
-import { AuthContext } from '../Provider/AuthProvider';
-import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router';
+import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
+import auth from "../firebase/firebase.config";
+import { updateProfile } from "firebase/auth";
+import { toast } from "react-toastify";
+import { AuthContext } from "../Provider/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router";
 
 const AddVolunteer = () => {
-    const { registerWithEmailPassword, setUser, user, handleGoogleSignin } =
-  useContext(AuthContext);
+  const { registerWithEmailPassword, setUser, user, handleGoogleSignin } =
+    useContext(AuthContext);
 
-  const [upazilas, setUpazilas]= useState([])
-  const [districts, setDistricts]= useState([])
+  const [upazilas, setUpazilas] = useState([]);
+  const [districts, setDistricts] = useState([]);
 
-  const [upazila, setUpazila]= useState('')
-  const [district, setDistrict]= useState('')
+  const [upazila, setUpazila] = useState("");
+  const [district, setDistrict] = useState("");
 
-  useEffect(()=>{
-    axios.get('/upazila.json')
-    .then(res=>{
-      setUpazilas(res.data.upazilas)
-    })
-    axios.get('/district.json')
-    .then(res=>{
-      setDistricts(res.data.districts)
-    })
-
-  },[])
-
+  useEffect(() => {
+    axios.get("/upazila.json").then((res) => {
+      setUpazilas(res.data.upazilas);
+    });
+    axios.get("/district.json").then((res) => {
+      setDistricts(res.data.districts);
+    });
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,10 +68,8 @@ const AddVolunteer = () => {
       blood,
       district,
       upazila,
-      role: 'volunteer'
+      role: "volunteer",
     };
-
-    
 
     if (res.data.success == true) {
       registerWithEmailPassword(email, pass)
@@ -88,7 +82,7 @@ const AddVolunteer = () => {
               setUser(userCredential.user);
               toast.success("Register successful");
               axios
-                .post("http://localhost:5000/users", formData)
+                .post("https://backend11-two.vercel.app/users", formData)
                 .then((res) => {
                   console.log(res.data);
                 })
@@ -146,32 +140,51 @@ const AddVolunteer = () => {
                 className="input"
                 placeholder="Enter your PhotoUrl"
               />
-              <select name="blood" defaultValue="Choose Blood Group" className="select">
+              <select
+                name="blood"
+                defaultValue="Choose Blood Group"
+                className="select"
+              >
                 <option disabled={true}>Choose Blood Group</option>
-                <option value='A+'>A+</option>
-                <option value='A-'>A-</option>
-                <option value='B+'>B+</option>
-                <option value='B-'>B-</option>
-                <option value='AB+'>AB+</option>
-                <option value='AB-'>AB-</option>
-                <option value='O+'>O+</option>
-                <option value='O-'>O-</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
               </select>
-            {/* District */}
-              <select value={district} onChange={(e)=>setDistrict(e.target.value)} className="select">
-                <option disabled selected value=''>Choose District</option>
-                {
-                  districts?.map(d=><option value={d?.name} key={d?.id}>{d?.name}</option>)
-                }
+              {/* District */}
+              <select
+                value={district}
+                onChange={(e) => setDistrict(e.target.value)}
+                className="select"
+              >
+                <option disabled selected value="">
+                  Choose District
+                </option>
+                {districts?.map((d) => (
+                  <option value={d?.name} key={d?.id}>
+                    {d?.name}
+                  </option>
+                ))}
               </select>
-                {/* Upazila */}
-              <select value={upazila} onChange={(e)=>setUpazila(e.target.value)} className="select">
-                <option disabled selected value=''>Choose Upazila</option>
-                {
-                  upazilas?.map(u=><option value={u?.name} key={u?.id}>{u?.name}</option>)
-                }
+              {/* Upazila */}
+              <select
+                value={upazila}
+                onChange={(e) => setUpazila(e.target.value)}
+                className="select"
+              >
+                <option disabled selected value="">
+                  Choose Upazila
+                </option>
+                {upazilas?.map((u) => (
+                  <option value={u?.name} key={u?.id}>
+                    {u?.name}
+                  </option>
+                ))}
               </select>
-
 
               <label className="label">Password</label>
               <input

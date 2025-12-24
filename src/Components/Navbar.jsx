@@ -71,9 +71,16 @@ const Navbar = () => {
             <li>
               <NavLink to={"/search"} >Search</NavLink>
             </li>
-            <li>
+
+            {user && (
+              <>
+                
+                <li>
               <NavLink to={"/donate"}>Donate</NavLink>
             </li>
+              </>
+            )}
+            
           
           {/* {user && (
             <>
@@ -92,6 +99,7 @@ const Navbar = () => {
       {user ? (
         <div className="navbar-end flex items-center gap-3">
           {/* <Link to={'/dashboard'} className="btn btn-sm">Dashboard</Link> */}
+          
           {role == "admin" && (
           <Link to="/dashboard/admin-dashboard" >
             <button className="btn btn-sm"> Admin Dashboard</button>
@@ -111,7 +119,7 @@ const Navbar = () => {
         )}
         
 
-          {/* <div
+          <div
             className="tooltip tooltip-bottom"
             data-tip={user.displayName || "User"}
           >
@@ -120,7 +128,7 @@ const Navbar = () => {
                 <img src={user.photoURL} alt="User Avatar" />
               </div>
             </div>
-          </div> */}
+          </div>
 
           <button onClick={handleSignOut} className="btn  btn-sm">
             Logout

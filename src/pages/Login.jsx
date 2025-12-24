@@ -24,7 +24,9 @@ const Login = () => {
         // Signed in
         const user = userCredential.user;
         setUser(user);
-        navigate(location.state);
+        // navigate(location.state);
+        navigate(location.state ? location.state : "/");
+
         toast.success("Login successful");
       })
       .catch((error) => {
@@ -85,9 +87,9 @@ const Login = () => {
                     Forgot password?
                   </button>
                 </div>
-                <button type='button' onClick={googleSignin} className="btn">
+                {/* <button type='button' onClick={googleSignin} className="btn">
                   <FcGoogle /> Continue With Google
-                </button>
+                </button> */}
                 <div>
                   <span>Don't have an account?</span>
                   <Link to={"/signup"} className="text-blue-500">
